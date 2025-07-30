@@ -1,0 +1,12 @@
+import datetime as dt
+
+snapshot_date = full_data['order_date'].max() + pd.Timedelta(days=1)
+rfm = full_data.groupby('customer_id').agg({
+    'order_date': lambda x: (snapshot_date - x.max()).days,
+    'order_id': 'count',
+    'price': 'sum'
+}).rename(columns={
+    'order_date': 'Recency',
+    'order_id': 'Frequency',
+    'price': 'Monetary'
+})
