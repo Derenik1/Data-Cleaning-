@@ -1,0 +1,8 @@
+Assume you have these CSVs:
+
+customers.csv
+orders.csv
+products.csv
+sessions.csv
+marketing.csv
+reviews.csv
