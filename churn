@@ -1,0 +1,2 @@
+churn_threshold = 60
+rfm['Churned'] = rfm['Recency'] > churn_threshold
